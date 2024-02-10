@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Node App</title>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #232323;
+        }
+
+        .main-content {
+            width: 80%;
+            padding: 10px 40px;
+            background-color: #343434;
+            border-radius: 5px;
+            margin: 20px auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            color: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            margin: 3px 10px;
+        }
+
+        .navbar {
+            padding: 4px 30px 10px 0px;
+            border-bottom: #232323 3px solid;
+        }
+
+        .page-content {
+            text-align: center;
+            padding-top: 40px;
+        }
+
+        .products-list {
+            width: 70%;
+            padding: 10px 30px;
+            background-color: #343434;
+            border-radius: 10px;
+            margin: 2px auto;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+            color: #fff;
+        }
+
+        .products-detail {
+            display: flex;
+        }
+
+        .product-image {
+            width: 140px;
+            height: 140px;
+            border-radius: 5px;
+            padding: 10px 10px;
+            margin: 0px 10px;
+        }
+
+        .product-specs {
+            text-align: left;
+            margin: 0px 10px;
+
+        }
+
+        span {
+            color: black;
+        }
+
+        p {
+            font-size: 12px;
+            margin: 2px 0px 2px 0px;
+        }
+
+        h3 {
+            margin: 10px 0px 10px 0px;
+        }
+
+        .product-info {
+            width: 30%;
+            padding: 5px 0px;
+            text-align: left;
+        }
+
+        .btn {
+            padding: 12px 10px;
+            border-radius: 2px;
+            border: none;
+        }
+
+        .btn-primary {
+            background-color: #16A085;
+        }
+
+        .btn-secondary {
+            background-color: #FF5733;
+        }
+
+        .rating-box-customer {
+            background-color: #16A085;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            text-decoration: solid;
+            text-shadow: #ccc;
+        }
+
+        .rating-box-expert {
+            float: right;
+            background-color: #16A085;
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin: 10px;
+            display: inline-block;
+            vertical-align: top;
+            box-sizing: border-box;
+            text-decoration: solid;
+            text-shadow: #ccc;
+        }
+
+        .rating-box h3 {
+            margin-top: 0;
+            font-size: 16px;
+        }
+
+        .rating-box p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .product-desc {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        .product-desc-image {
+            flex: 0 0 40%; /* Adjust the width of the image container */
+            margin-right: 20px; /* Adjust the spacing between image and details */
+        }
+
+        .product-desc-details {
+            flex: 0 0 60%; /* Adjust the width of the details container */
+        }
+
+        .product-desc h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .product-desc h2 {
+            font-size: 20px;
+            color: green;
+            margin-bottom: 10px;
+        }
+
+        .product-desc-details h3 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        .product-desc-p {
+            font-size: 16px;
+            margin-bottom: 5px;
+        }
+
+        /* Set fixed dimensions for images and videos */
+        .product-desc-image img,
+        .product-desc-image iframe {
+            max-width: 100%; /* Limit maximum width */
+         /* Maintain aspect ratio */
+        }
+
+        /* Adjust the width of the container */
+        .product-desc-image {
+            margin-right: 20px; /* Adjust the spacing between image and details */
+        }
+        /* CSS for the ratings container */
+.ratings-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+/* Adjustments for the rating boxes */
+.rating-box {
+    background-color: #16A085;
+    width: 200px; /* Adjust width as needed */
+    height: 50px; /* Adjust height as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    text-align: center; /* Center the content */
+    box-sizing: border-box;
+    text-decoration-color: #343434;
+}
+
+.rating-box h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.rating-box h4 {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.rating-box h1{
+    margin: 5px 0;
+    font-size: 30px;
+    text-decoration-thickness: 50%;
+
+}
+.ratings-image-container {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    justify-content: space-between;
+    margin-bottom: 20px; /* Adjust margin as needed */
+}
+
+/* CSS for the image-container */
+.image-container {
+    width: 60%; /* Adjust width as needed */
+    margin-right: 20px; /* Adjust margin as needed */
+}
+.highlight {
+    color: #FF5733; /* Your desired highlight color */
+}
+
+
+
+    </style>
+</head>
+<body>
+<div class="main-content">
+    <div>
+        <h>Please select your language</h>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">TELUGU</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">HINDI</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">ENGLISH</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">MALAYALAM</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">TAMIL</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">KANNADA</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">BENGALI</button>
+        <button class="btn btn-primary" onclick="switchLanguage('Telugu')">ODISSI</button>
+    </div>
+
+    <div class="navbar">
+        <a href="Home">Home</a>
+        <a href="Products">Products</a>
+        <a href="About">About</a>
+        <a href="Contact">Contact</a>
+    </div>
+    <div class="page-content">
+        {{%CONTENT%}}
+    </div>
+    <script>
+        // Function to switch the language
+        function switchLanguage(language) {
+            // Get all elements with the 'translatable' class
+            var elements = document.getElementsByClassName('translatable');
+            // Loop through each element and replace its content based on the language
+            for (var i = 0; i < elements.length; i++) {
+                var element = elements[i];
+                // Get the translation based on the element's current content and the selected language
+                var translation = getTranslation(element.textContent.trim(), language);
+                // Replace the element's content with the translation
+                element.textContent = translation;
+            }
+        }
+    
+        // Function to get the translation for a given text and language
+        function getTranslation(text, language) {
+            // Define your translations here
+            var translations = {
+                // English translations
+                'TELUGU': {
+                    'Home': 'హోమ్',
+                    'Products': 'ఉత్పత్తులు',
+                    'About': 'గురించి',
+                    'Contact': 'సంప్రదించండి',
+                    // Add more translations as needed
+                },
+                // Hindi translations
+                'Hindi': {
+                    'Home': 'होम',
+                    'Products': 'उत्पाद',
+                    'About': 'के बारे में',
+                    'Contact': 'संपर्क करें',
+                    // Add more translations as needed
+                }
+                // Add more languages and translations as needed
+            };
+    
+            // Return the translation if available, or the original text if not found
+            return translations[language][text] || text;
+        }
+    </script>
+</div>
+</body>
+</html>

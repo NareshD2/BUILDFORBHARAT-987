@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Node App</title>
+        <style>
+            *{
+                margin: 0px;
+                padding: 0px;
+                box-sizing: border-box;
+            }
+            body{
+                background-color: #232323;
+            }
+            .main-content{
+                width: 80%;
+                padding: 10px 40px;
+                background-color: #343434;
+                border-radius: 5px;
+                margin: 20px auto;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                color: #fff;
+                font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            }
+            a{
+                color: #fff;
+                text-decoration: none;
+                font-size: 14px;
+                font-weight: bold;
+                margin: 3px 10px;
+            }
+            .navbar{
+                padding: 4px 30px 10px 0px;
+                border-bottom: #232323 3px solid;
+            }
+            .page-content{
+                text-align: center;
+                padding-top: 40px;
+            }
+            .products-list{
+                width: 70%;
+                padding: 10px 30px;
+                background-color: #343434;
+                border-radius: 10px;
+                margin: 2px auto;
+                box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+                color: #fff;
+            }
+            .products-detail{
+                display: flex;
+            }
+            .product-image{
+                width: 140px;
+                height: 140px;
+                border-radius: 5px;
+                padding: 10px 10px;
+                margin: 0px 10px;
+            }
+            .product-specs{
+                text-align: left;
+                margin: 0px 10px;
+                
+            }
+            span{
+                color: #FF5733;
+            }
+            p{
+                font-size: 12px;
+                margin: 2px 0px 2px 0px;
+            }
+            h3{
+                margin: 10px 0px 10px 0px;
+            }
+            .product-info{
+                width: 30%;
+                padding: 5px 0px;
+                text-align: left;
+            }
+            .btn{
+                padding: 12px 10px;
+                border-radius: 2px;
+                border: none;
+            }
+            .btn-primary{
+                background-color: #16A085;
+            }
+            .btn-secondary{
+                background-color: #FF5733;
+            }
+            .rating-box-customer {
+    background-color:#16A085;
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top; /* Align boxes to the top */
+    box-sizing: border-box;
+    text-decoration: solid;
+    text-shadow: #ccc;
+}
+.rating-box-expert {
+    float:right;
+    background-color: #16A085;
+    width: 200px; /* Adjust the width as needed */
+    height: 200px; /* Adjust the height as needed */
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    vertical-align: top; /* Align boxes to the top */
+    box-sizing: border-box;
+    text-decoration: solid;
+    text-shadow: #ccc;
+}
+
+.rating-box h3 {
+    margin-top: 0;
+    font-size: 16px;
+}
+
+.rating-box p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+.product-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.product-desc-image {
+    flex: 0 0 60%; /* Adjust the width of the image container */
+    margin-right: 20px; /* Adjust the spacing between image and details */
+}
+
+.product-desc-details {
+    flex: 0 0 40%; /* Adjust the width of the details container */
+}
+
+.product-desc h1 {
+    font-size: 24px; /* Adjust the font size of the product name */
+    margin-bottom: 10px;
+}
+
+.product-desc h2 {
+    font-size: 20px; /* Adjust the font size of the product price */
+    color: green;
+    margin-bottom: 10px;
+}
+
+.product-desc-details h3 {
+    font-size: 18px; /* Adjust the font size of the section headings */
+    margin-bottom: 10px;
+}
+
+.product-desc-p {
+    font-size: 16px; /* Adjust the font size of the paragraph text */
+    margin-bottom: 5px;
+}
+
+
+        </style>
+    </head>
+    <body>
+        <div class="main-content">
+            <div><h>please select your language </h>
+                <button class="btn btn-primary">TELUGU</button>
+                <button class="btn btn-primary">HINDI</button>
+                <button class="btn btn-primary">ENGLISH</button>
+                <button class="btn btn-primary">MAlYALUM</button>
+                <button class="btn btn-primary">TAMIL</button>
+                <button class="btn btn-primary">KANADA</button>
+                <button class="btn btn-primary">BENGALI</button>
+                <button class="btn btn-primary">ODISSI</button></div>
+
+            <div class="navbar">
+                <a href="Home">Home</a>
+                <a href="Products">Products</a>
+                <a href="About">About</a>
+                <a href="Contact">Contact</a>
+            </div>
+            <div class="page-content">
+                
+                {{%CONTENT%}}
+            </div>
+        </div>
+    </body>
+</html>

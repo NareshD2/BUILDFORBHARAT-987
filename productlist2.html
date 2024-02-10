@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ title }}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="page-content">
+        <div class="product-page">
+            <div class="product-desc">
+                <!-- Ratings and Image Container -->
+                <div class="ratings-image-container">
+                    <!-- Customer Rating Box -->
+                    <div class="rating-box">
+                        <h3>{{ lang.customer_rating }}</h3>
+                        <h4>{{ customer_rating }}</h4>
+                    </div>
+                    <!-- Image Container -->
+                    <div class="image-container">
+                        <!-- Carousel for images -->
+                        <div id="image-carousel" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                {% for image in images %}
+                                    <div class="carousel-item {% if loop.first %}active{% endif %}">
+                                        <img src="{{ url_for('static', filename=image) }}" class="d-block w-100" alt="Product Image">
+                                    </div>
+                                {% endfor %}
+                            </div>
+                            <!-- Carousel Controls -->
+                            <a class="carousel-control-prev" href="#image-carousel" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">{{ lang.previous }}</span>
+                            </a>
+                            <a class="carousel-control-next" href="#image-carousel" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">{{ lang.next }}</span>
+                            </a>
+                        </div>
+                        <!-- Video -->
+                        <a href="{{ view360 }}" target="_blank">{{ lang.view_360 }}</a>
+                        <iframe width="560" height="315" src="{{ video_url }}"></iframe>
+                    </div>
+                    <!-- Expert Rating Box -->
+                    <div class="rating-box">
+                        <h3>{{ lang.expert_rating }}</h3>
+                        <h4>{{ expert_rating }}</h4>
+                    </div>
+                </div>
+                <!-- Product details -->
+                <div class="product-details-info">
+                    <h1>{{ product_name }}</h1>
+                    <h2 style="color: green;">${{ price }}</h2>
+                    <div class="product-desc-details">
+                        <h3>{{ lang.product_details }}</h3>
+                        <p class="product-desc-p">{{ size }}</p>
+                        <p class="product-desc-p">{{ camera_size }}</p>
+                        <p class="product-desc-p"><b>{{ lang.model_number }}</b>{{ model_number }}</p>
+                        <p class="product-desc-p"><b>{{ lang.model_name }}</b>{{ model_name }}</p>
+                        <p class="product-desc-p"><b>{{ lang.rom }}</b>{{ rom }} GB</p>
+                    </div>
+                    <div class="product-details-desc">
+                        <h3>{{ lang.product_description }}</h3>
+                        <p class="product-desc-p">{{ description }}</p>
+                    </div>
+                </div>
+                <!-- Back button -->
+                <div>
+                    <a href="/products" class="btn-back">{{ lang.back }}</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
